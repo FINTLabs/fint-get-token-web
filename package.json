@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/telemark/fint-get-token-web.git"
+    "url": "git+https://github.com/FINTprosjektet/fint-get-token-web.git"
   },
   "keywords": [],
   "author": {
@@ -34,7 +34,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alheimsins/fint-get-token-web/issues"
+    "url": "https://github.com/FINTprosjektet/fint-get-token-web/issues"
   },
   "dependencies": {
     "axios": "0.17.1",
