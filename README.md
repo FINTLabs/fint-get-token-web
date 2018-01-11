@@ -6,6 +6,8 @@
 
 Get fint token frontend written in [next.js](github.com/zeit/next.js)
 
+Try it live @ https://fint-token.service.t-fk.no
+
 ## Install
 
 ```bash
