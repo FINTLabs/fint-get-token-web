@@ -31,6 +31,12 @@ npm start
 npm run export # Static files is now in `out/`
 ```
 
+### Deploy to [Now](https://zeit.co/now)
+```bash
+npm i
+npm run deploy
+```
+
 ## License
 
 [MIT](LICENSE)
