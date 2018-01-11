@@ -13,7 +13,6 @@ Try it live @ https://fint-token.service.t-fk.no
 ```bash
 git clone https://github.com/telemark/FINTprosjektet
 npm i
-npm run dev # or `npm start`
 ```
 
 ### Development
@@ -33,7 +32,6 @@ npm run export # Static files is now in `out/`
 
 ### Deploy to [Now](https://zeit.co/now)
 ```bash
-npm i
 npm run deploy
 ```
 
