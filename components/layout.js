@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default ({ children }) => (
+exports.Layout = ({ children }) => (
   <div className='container'>
     <Head>
       <meta name='viewport' content='initial-scale=0.8, maximum-scale=0.8, minimum-scale=0.8 user-scalable=no, width=device-width' />
@@ -15,7 +15,7 @@ export default ({ children }) => (
         }
         .container {
           display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-columns: 1fr 2fr 1fr;
         }
         @media screen and (max-width: 800px) {
           .container {

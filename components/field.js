@@ -1,4 +1,4 @@
-export default ({ name, children }) => (
+exports.Field = ({ name, children }) => (
   <div className='field'>
     <label htmlFor={name}>
       {name.toUpperCase()}:

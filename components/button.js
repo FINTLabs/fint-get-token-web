@@ -1,4 +1,4 @@
-export default (props) => {
+exports.Button = props => {
   const propTypes = {
     onClick: props.onClick,
     disabled: props.disabled,

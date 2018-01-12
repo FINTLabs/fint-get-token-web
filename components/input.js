@@ -1,6 +1,4 @@
-import React from 'react'
-
-export default function InputText (props) {
+exports.Input = props => {
   const propTypes = {
     name: props.name,
     type: props.type || 'text',

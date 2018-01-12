@@ -1,8 +1,8 @@
-import React from 'react'
-import getToken from '../lib/get-token'
+import { Component } from 'react'
+import getToken from 'fint-get-token'
 import { Layout, Field, Input, Button } from '../components/index'
 
-export default class extends React.Component {
+export default class extends Component {
   constructor (props) {
     super(props)
     this.state = {}
@@ -11,7 +11,7 @@ export default class extends React.Component {
 
   async handleSubmit (e) {
     e.preventDefault()
-    this.setState({ loading: true })
+    this.setState({ loading: true, token: false, error: false })
     const options = {
       url: 'https://namidp01.rogfk.no/nidp/oauth/nam/token',
       credentials: {
@@ -28,41 +28,46 @@ export default class extends React.Component {
     }
     try {
       const { access_token: token } = await getToken(options)
-      this.setState({ token, error: false, loading: false })
-    } catch (e) {
-      this.setState({ token: false, error: e.message, loading: false })
+      this.setState({ token, loading: false })
+    } catch (error) {
+      this.setState({ error: error.message, loading: false })
     }
   }
 
   render () {
     return (
-      <Layout>
-        <div className='main'>
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <img src='/static/logo.png' width='300px' />
-              <Field name='client id'><Input name='clientId' type='text' autoFocus='true' />
-              </Field>
-              <Field name='client secret'>
-                <Input name='clientSecret' type='text' />
-              </Field>
-              <Field name='username'>
-                <Input name='username' type='text' />
-              </Field>
-              <Field name='password'>
-                <Input name='password' type='text' />
-              </Field>
-              <Button type='submit' value='Get token' />
-            </div>
-          </form>
-          { this.state.token &&
-            <pre>{this.state.token}</pre>
+      <div>
+        <Layout>
+          <div className='main'>
+            <form onSubmit={this.handleSubmit}>
+              <div>
+                <img src='/static/logo.png' width='300px' />
+                <Field name='client id'>
+                  <Input name='clientId' autoFocus='true' />
+                </Field>
+                <Field name='client secret'>
+                  <Input name='clientSecret' />
+                </Field>
+                <Field name='username'>
+                  <Input name='username' />
+                </Field>
+                <Field name='password'>
+                  <Input name='password' />
+                </Field>
+                <Button type='submit' value='Get token' />
+              </div>
+            </form>
+          </div>
+        </Layout>
+        <div>
+          {
+            this.state.token && <pre>{this.state.token}</pre>
           }
-          { this.state.loading &&
-            <div>Laster ...</div>
+          {
+            this.state.loading && <div>Laster ...</div>
           }
-          { this.state.error &&
-            <pre className='error'>{this.state.error}</pre>
+          {
+            this.state.error && <pre className='error'>{this.state.error}</pre>
           }
         </div>
         <style jsx>
@@ -81,9 +86,9 @@ export default class extends React.Component {
               background-color: #ffe7e7;
               border: 1px solid #ddbbbb;
             }
-        `}
+          `}
         </style>
-      </Layout>
+      </div>
     )
   }
 }
