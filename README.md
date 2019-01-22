@@ -40,3 +40,4 @@ npm run deploy
 [MIT](LICENSE)
 
 ![Robohash image of fint-get-token-web](https://robots.kebabstudios.party/fint-get-token-web.png "Robohash image of fint-get-token-web")
+
