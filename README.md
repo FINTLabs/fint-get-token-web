@@ -1,43 +1,5 @@
-[![Build Status](https://travis-ci.org/telemark/fint-get-token-web.svg?branch=master)](https://travis-ci.org/telemark/fint-get-token-web)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/fint-get-token-web.svg)](https://greenkeeper.io/)
+# Get FINT Token Web
 
-# fint-get-token-web
+This is a small web UI to obtain a OAuth token that one can use with e.g. the headermod plugin. 
 
-Get fint token frontend written in [next.js](github.com/zeit/next.js)
-
-Try it live @ https://fint-token.service.t-fk.no
-
-## Install
-
-```bash
-git clone https://github.com/telemark/FINTprosjektet
-npm i
-```
-
-### Development
-```bash
-npm run dev
-```
-
-### Production running server
-```bash
-npm start
-```
-
-### Production serverless
-```bash
-npm run export # Static files is now in `out/`
-```
-
-### Deploy to [Now](https://zeit.co/now)
-```bash
-npm run deploy
-```
-
-## License
-
-[MIT](LICENSE)
-
-![Robohash image of fint-get-token-web](https://robots.kebabstudios.party/fint-get-token-web.png "Robohash image of fint-get-token-web")
-
+[https://tools.fintlabs.no/token](https://tools.fintlabs.no/token)
