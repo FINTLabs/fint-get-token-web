@@ -5,6 +5,9 @@ pipeline {
             image 'node:10'
         }
     }
+    environment {
+        FIREBASE_DEPLOY_KEY = credentials('firebase_token_web')
+    }
     stages {
         stage('Install') {
             steps {
@@ -18,9 +21,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'yarn add --dev firebase-tools'
-                sh 'yarn install'
-                sh 'firebase deploy'
+                sh 'yarn global add firebase-tools'
+                sh "firebase deploy --token ${FIREBASE_DEPLOY_KEY}"
             }
         }
     }
